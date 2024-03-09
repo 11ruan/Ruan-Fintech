@@ -3,7 +3,7 @@ package br.com.fintech.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Conta {
+public class ContaCorrente extends Conta{
 	
 	private int tipo;
 	private Integer numero;
@@ -12,8 +12,13 @@ public class Conta {
 	private List<Transacao> extrato;
 	private String banco;
 	
-	public Conta() {
-		
+	public ContaCorrente() {
+		this.tipo = 1;
+		this.numero = this.getNumero();
+		this.saldo = 0.0;
+		this.limite = 0.0;
+		this.extrato = new ArrayList<>();
+		this.banco = "C";
 	}
 	
 	public int getTipo() {
@@ -22,7 +27,6 @@ public class Conta {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-	
 	public Integer getNumero() {
 		return numero;
 	}
@@ -54,6 +58,4 @@ public class Conta {
 		this.banco = banco;
 	}
 	
-	
-
 }
